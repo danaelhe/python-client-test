@@ -1,0 +1,21 @@
+name: Client Generation
+on: [push]
+  #push:
+    # paths:
+    #   - 'specification/**'
+jobs:
+  Generate-Python-Client:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Make spec directory
+      run: mkdir public
+    - name: Download spec file
+      run: curl https://api-engineering.nyc3.digitaloceanspaces.com/spec-ci/DigitalOcean-public.v2.yaml -o public/DigitalOcean-public.v2.yaml
+    - uses: actions/upload-artifact@v2
+      with:
+        name: spec
+        path: public/DigitalOcean-public.v2.yaml
+    - name: install autorest
+      run: npm install -g autorest
+    - name: generate code
+      run: autorest --input-file=public/DigitalOcean-public.v2.yaml --python --output-folder=do-client-python/ 
