@@ -15,7 +15,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: openapi-spec
-        path: spec/do-openapi.yaml
+        path: public/DigitalOcean-public.v2.yaml
     # - uses: actions/upload-artifact@v2
     #   with:
     #     name: spec
