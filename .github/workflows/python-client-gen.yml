@@ -1,8 +1,9 @@
 name: Client Generation
-on: [push]
-  #push:
-    # paths:
-    #   - 'specification/**'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
 jobs:
   Generate-Python-Client:
     runs-on: ubuntu-latest
