@@ -30,7 +30,7 @@ jobs:
         committer: GitHub <noreply@github.com>
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         branch: bot-regenerate-python-client
-        delete-branch: true
+        # delete-branch: true
         title: '[Bot] Re-generate Python Client'
         body: |
           Re-generate Python Client
