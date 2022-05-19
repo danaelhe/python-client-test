@@ -20,6 +20,7 @@ jobs:
       run: npm install -g autorest
     - name: generate code
       run: autorest --input-file=public/DigitalOcean-public.v2.yaml --python --output-folder=do-client-python/ 
+    - uses: actions/checkout@v3
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v4
