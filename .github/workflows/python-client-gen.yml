@@ -37,7 +37,7 @@ jobs:
         branch: bot-regenerate-python-client
         branch-suffix: short-commit-hash
         delete-branch: true
-        title: ${{ github.event.inputs.commit_url }}
+        title: '[Bot] Re-generate Python Client'
         body: |
           Re-generate Python Client
           - Changes to DigitalOcean spec triggered this regeneration of the python client.
