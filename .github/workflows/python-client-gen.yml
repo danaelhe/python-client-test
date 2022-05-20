@@ -35,8 +35,9 @@ jobs:
         committer: GitHub <noreply@github.com>
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         branch: bot-regenerate-python-client
+        branch-suffix: short-commit-hash
         delete-branch: true
-        title: '[Bot] Re-generate Python Client'
+        title: ${{ github.event.inputs.commit_url }}
         body: |
           Re-generate Python Client
           - Changes to DigitalOcean spec triggered this regeneration of the python client.
