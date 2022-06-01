@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Setup node
-      uses: actions/setup-node@v3
-    - run: npm install
     - name: delete old generated code
       run: find . ! -name "*_patch.py" -delete
     - name: Make spec directory
@@ -25,7 +22,7 @@ jobs:
         name: DigitalOcean-public.v2
         path: public/DigitalOcean-public.v2.yaml
     - name: generate code
-      run: npm run autorest -- client_gen_config.yaml --verbose --python --add-credential --input-file=public/DigitalOcean-public.v2.yaml 
+      run: autorest client_gen_config.yaml 
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v4
