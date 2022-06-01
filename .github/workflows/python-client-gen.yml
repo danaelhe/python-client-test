@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: delete old generated code
-      run: find generated/ ! -name "*_patch.py" -delete
+      run: find generated/ ! -name "*_patch.py" -exec rm -rv {} +
     - name: Make spec directory
       run: mkdir public
     - name: Download spec file
