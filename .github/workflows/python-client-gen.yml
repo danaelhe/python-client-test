@@ -21,6 +21,8 @@ jobs:
       with:
         name: DigitalOcean-public.v2
         path: public/DigitalOcean-public.v2.yaml
+    - name: install autorest
+      run: npm install -g autorest
     - name: generate code
       run: autorest client_gen_config.yaml 
     - name: Create Pull Request
