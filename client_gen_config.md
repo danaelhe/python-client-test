@@ -1,7 +1,6 @@
 # Autorest config
 
 ```yaml
-input-file: public/DigitalOcean-public.v2.yaml 
 title: DigitalOceanClient
 namespace: digitalocean
 python: true
